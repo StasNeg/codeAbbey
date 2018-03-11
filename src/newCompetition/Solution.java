@@ -16,12 +16,7 @@ public class Solution {
             while (bufferedReader.ready()) {
                 words.add(bufferedReader.readLine().toLowerCase());
             }
-            Collections.sort(words, new Comparator<String>() {
-                @Override
-                public int compare(String o1, String o2) {
-                    return o1.length() - o2.length();
-                }
-            });
+            Collections.sort(words, Comparator.comparingInt(String::length));
             String result = "";
             String temp = "";
             for (int i = 0; i < words.get(0).length(); i++) {
